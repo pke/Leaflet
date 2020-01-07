@@ -107,9 +107,8 @@ export var MarkerDrag = Handler.extend({
 		// Fired when the marker starts moving (because of dragging).
 
 		this._oldLatLng = this._marker.getLatLng();
-		this._marker
-		    .closePopup()
-		    .fire('movestart')
+		this._marker.closePopup && this._marker.closePopup();
+		this.fire('movestart')
 		    .fire('dragstart');
 	},
 
